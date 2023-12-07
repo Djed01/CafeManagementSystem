@@ -1,6 +1,6 @@
 package com.inn.caffe.service;
 
-import com.inn.caffe.wrapper.UserWrapper;
+import com.inn.caffe.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public interface UserService {
 
     ResponseEntity<String> login(Map<String,String> requestMap);
 
-    ResponseEntity<List<UserWrapper>> getAllUser();
+    ResponseEntity<List<UserDTO>> getAllUser();
 
     ResponseEntity<String> update(Map<String ,String> requestMap);
 

@@ -1,6 +1,6 @@
 package com.inn.caffe.rest;
 
-import com.inn.caffe.POJO.Category;
+import com.inn.caffe.model.Category;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

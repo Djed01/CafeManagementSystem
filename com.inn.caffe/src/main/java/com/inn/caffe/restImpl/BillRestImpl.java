@@ -1,6 +1,6 @@
 package com.inn.caffe.restImpl;
 
-import com.inn.caffe.POJO.Bill;
+import com.inn.caffe.model.Bill;
 import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.rest.BillRest;
 import com.inn.caffe.service.BillService;

@@ -1,6 +1,6 @@
 package com.inn.caffe.service;
 
-import com.inn.caffe.POJO.Bill;
+import com.inn.caffe.model.Bill;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

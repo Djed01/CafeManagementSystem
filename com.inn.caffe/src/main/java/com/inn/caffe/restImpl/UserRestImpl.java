@@ -4,7 +4,7 @@ import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.rest.UserRest;
 import com.inn.caffe.service.UserService;
 import com.inn.caffe.utils.CafeUtils;
-import com.inn.caffe.wrapper.UserWrapper;
+import com.inn.caffe.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,13 +41,13 @@ public class UserRestImpl implements UserRest {
     }
 
     @Override
-    public ResponseEntity<List<UserWrapper>> getAllUser() {
+    public ResponseEntity<List<UserDTO>> getAllUser() {
        try {
            return userService.getAllUser();
        }catch (Exception ex){
            ex.printStackTrace();
        }
-       return new ResponseEntity<List<UserWrapper>>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+       return new ResponseEntity<List<UserDTO>>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @Override

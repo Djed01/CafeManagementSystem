@@ -1,15 +1,13 @@
 package com.inn.caffe.serviceImpl;
 
 import com.inn.caffe.JWT.JwtFilter;
-import com.inn.caffe.POJO.Category;
-import com.inn.caffe.POJO.Product;
+import com.inn.caffe.model.Category;
+import com.inn.caffe.model.Product;
 import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.dao.ProductDao;
 import com.inn.caffe.service.ProductService;
 import com.inn.caffe.utils.CafeUtils;
-import com.inn.caffe.wrapper.ProductWrapper;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import org.checkerframework.checker.units.qual.C;
+import com.inn.caffe.dto.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -79,7 +77,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public ResponseEntity<List<ProductWrapper>> getAllProduct() {
+    public ResponseEntity<List<ProductDTO>> getAllProduct() {
         try {
             return new ResponseEntity<>(productDao.getAllProduct(), HttpStatus.OK);
         } catch (Exception ex) {
@@ -155,7 +153,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<List<ProductWrapper>> getByCategory(Integer id) {
+    public ResponseEntity<List<ProductDTO>> getByCategory(Integer id) {
         try {
             return new ResponseEntity<>(productDao.getProductByCategory(id),HttpStatus.OK);
         }catch (Exception ex){
@@ -165,13 +163,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<ProductWrapper> getProductById(Integer id) {
+    public ResponseEntity<ProductDTO> getProductById(Integer id) {
         try {
             return new ResponseEntity<>(productDao.getProductById(id),HttpStatus.OK);
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        return new ResponseEntity<>(new ProductWrapper(),HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new ProductDTO(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }

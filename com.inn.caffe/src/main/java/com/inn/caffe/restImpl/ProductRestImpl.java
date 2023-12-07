@@ -4,9 +4,8 @@ import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.rest.ProductRest;
 import com.inn.caffe.service.ProductService;
 import com.inn.caffe.utils.CafeUtils;
-import com.inn.caffe.wrapper.ProductWrapper;
+import com.inn.caffe.dto.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,7 +30,7 @@ public class ProductRestImpl implements ProductRest {
     }
 
     @Override
-    public ResponseEntity<List<ProductWrapper>> getAllProduct() {
+    public ResponseEntity<List<ProductDTO>> getAllProduct() {
         try {
             return productService.getAllProduct();
         }catch (Exception ex){
@@ -71,7 +70,7 @@ public class ProductRestImpl implements ProductRest {
     }
 
     @Override
-    public ResponseEntity<List<ProductWrapper>> getByCategory(Integer id) {
+    public ResponseEntity<List<ProductDTO>> getByCategory(Integer id) {
         try {
             return productService.getByCategory(id);
         }catch (Exception ex){
@@ -81,13 +80,13 @@ public class ProductRestImpl implements ProductRest {
     }
 
     @Override
-    public ResponseEntity<ProductWrapper> getProductById(Integer id) {
+    public ResponseEntity<ProductDTO> getProductById(Integer id) {
         try {
             return productService.getProductById(id);
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        return new ResponseEntity<>(new ProductWrapper(),HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new ProductDTO(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 

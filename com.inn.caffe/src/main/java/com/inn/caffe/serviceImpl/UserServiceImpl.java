@@ -4,13 +4,13 @@ import com.google.common.base.Strings;
 import com.inn.caffe.JWT.CustomerUsersDetailsService;
 import com.inn.caffe.JWT.JwtFilter;
 import com.inn.caffe.JWT.JwtUtil;
-import com.inn.caffe.POJO.User;
+import com.inn.caffe.model.User;
 import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.dao.UserDao;
 import com.inn.caffe.service.UserService;
 import com.inn.caffe.utils.CafeUtils;
 import com.inn.caffe.utils.EmailUtils;
-import com.inn.caffe.wrapper.UserWrapper;
+import com.inn.caffe.dto.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -108,7 +108,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseEntity<List<UserWrapper>> getAllUser() {
+    public ResponseEntity<List<UserDTO>> getAllUser() {
         try {
             if(jwtFilter.isAdmin()){
                 return new ResponseEntity<>(userDao.getAllUser(),HttpStatus.OK);

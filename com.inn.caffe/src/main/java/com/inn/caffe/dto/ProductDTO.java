@@ -1,10 +1,9 @@
-package com.inn.caffe.wrapper;
+package com.inn.caffe.dto;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 
 @Data
-public class ProductWrapper {
+public class ProductDTO {
     Integer id;
 
     String name;
@@ -19,11 +18,11 @@ public class ProductWrapper {
 
     String categoryName;
 
-    public ProductWrapper() {
+    public ProductDTO() {
 
     }
 
-    public ProductWrapper(Integer id, String name, String description, Integer price, String status, Integer categoryId, String categoryName) {
+    public ProductDTO(Integer id, String name, String description, Integer price, String status, Integer categoryId, String categoryName) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -33,12 +32,12 @@ public class ProductWrapper {
         this.categoryName = categoryName;
     }
 
-    public ProductWrapper(Integer id, String name) {
+    public ProductDTO(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public ProductWrapper(Integer id, String name, String description, Integer price) {
+    public ProductDTO(Integer id, String name, String description, Integer price) {
         this.id = id;
         this.name = name;
         this.description = description;

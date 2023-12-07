@@ -1,7 +1,7 @@
 package com.inn.caffe.serviceImpl;
 
 import com.inn.caffe.JWT.JwtFilter;
-import com.inn.caffe.POJO.Bill;
+import com.inn.caffe.model.Bill;
 import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.dao.BillDao;
 import com.inn.caffe.service.BillService;
@@ -14,10 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.pdfbox.io.IOUtils;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.amqp.RabbitStreamTemplateConfigurer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.io.File;

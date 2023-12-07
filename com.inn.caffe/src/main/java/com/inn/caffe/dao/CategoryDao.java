@@ -1,6 +1,6 @@
 package com.inn.caffe.dao;
 
-import com.inn.caffe.POJO.Category;
+import com.inn.caffe.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

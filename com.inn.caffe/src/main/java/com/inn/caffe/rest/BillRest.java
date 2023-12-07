@@ -1,7 +1,6 @@
 package com.inn.caffe.rest;
 
-import com.inn.caffe.POJO.Bill;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.inn.caffe.model.Bill;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

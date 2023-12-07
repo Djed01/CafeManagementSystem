@@ -1,8 +1,6 @@
 package com.inn.caffe.rest;
 
-import com.inn.caffe.POJO.Product;
-import com.inn.caffe.wrapper.ProductWrapper;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.inn.caffe.dto.ProductDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +14,7 @@ public interface ProductRest {
     ResponseEntity<String> addNewProduct(@RequestBody Map<String,String> requestMap);
 
     @GetMapping(path = "/get")
-    ResponseEntity<List<ProductWrapper>> getAllProduct();
+    ResponseEntity<List<ProductDTO>> getAllProduct();
 
     @PostMapping(path = "/update")
     ResponseEntity<String> updateProduct(@RequestBody Map<String,String> requestMap);
@@ -28,8 +26,8 @@ public interface ProductRest {
     ResponseEntity<String> updateStatus(@RequestBody Map<String,String> restMap);
 
     @GetMapping(path = "/getByCategory/{id}")
-    ResponseEntity<List<ProductWrapper>> getByCategory(@PathVariable Integer id);
+    ResponseEntity<List<ProductDTO>> getByCategory(@PathVariable Integer id);
 
     @GetMapping(path = "/getById/{id}")
-    ResponseEntity<ProductWrapper> getProductById(@PathVariable Integer id);
+    ResponseEntity<ProductDTO> getProductById(@PathVariable Integer id);
 }

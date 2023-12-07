@@ -2,7 +2,7 @@ package com.inn.caffe.serviceImpl;
 
 import com.google.common.base.Strings;
 import com.inn.caffe.JWT.JwtFilter;
-import com.inn.caffe.POJO.Category;
+import com.inn.caffe.model.Category;
 import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.dao.CategoryDao;
 import com.inn.caffe.service.CategoryService;

@@ -1,6 +1,6 @@
 package com.inn.caffe.restImpl;
 
-import com.inn.caffe.POJO.Category;
+import com.inn.caffe.model.Category;
 import com.inn.caffe.constants.CafeConstants;
 import com.inn.caffe.rest.CategoryRest;
 import com.inn.caffe.service.CategoryService;

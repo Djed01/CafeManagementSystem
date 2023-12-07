@@ -1,7 +1,6 @@
 package com.inn.caffe.service;
 
-import com.inn.caffe.wrapper.ProductWrapper;
-import jakarta.persistence.criteria.CriteriaBuilder;
+import com.inn.caffe.dto.ProductDTO;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -11,7 +10,7 @@ public interface ProductService {
 
     ResponseEntity<String> addNewProduct(Map<String,String> requestMap);
 
-    ResponseEntity<List<ProductWrapper>> getAllProduct();
+    ResponseEntity<List<ProductDTO>> getAllProduct();
 
     ResponseEntity<String> updateProduct(Map<String,String> requestMap);
 
@@ -19,7 +18,7 @@ public interface ProductService {
 
     ResponseEntity<String> updateStatus(Map<String,String> requestMap);
 
-    ResponseEntity<List<ProductWrapper>> getByCategory(Integer id);
+    ResponseEntity<List<ProductDTO>> getByCategory(Integer id);
 
-    ResponseEntity<ProductWrapper> getProductById(Integer id);
+    ResponseEntity<ProductDTO> getProductById(Integer id);
 }

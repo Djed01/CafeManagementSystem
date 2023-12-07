@@ -1,6 +1,6 @@
 package com.inn.caffe.rest;
 
-import com.inn.caffe.wrapper.UserWrapper;
+import com.inn.caffe.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +19,7 @@ public interface UserRest {
     public ResponseEntity<String> login(@RequestBody(required = true) Map<String ,String> requestMap);
 
     @GetMapping(path = "/get")
-    public ResponseEntity<List<UserWrapper>> getAllUser();
+    public ResponseEntity<List<UserDTO>> getAllUser();
 
     @PostMapping(path = "/update")
     public ResponseEntity<String> update(@RequestBody(required = true) Map<String,String> requestMap);

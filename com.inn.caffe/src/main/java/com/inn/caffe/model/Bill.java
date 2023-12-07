@@ -1,4 +1,4 @@
-package com.inn.caffe.POJO;
+package com.inn.caffe.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
